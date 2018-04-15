@@ -35,7 +35,7 @@ cp -r //opt/csw/bin/sshpass /usr/bin/
 ```
 
 USAGE:
-
--- ansible 65blk -i netdev -m raw -a "sh bgp summ" -u cisco --ask-pass
--- ansible asrm61 -i netdev -m raw -a "sh bgp summ" -u cisco --ask-pass
-  
+```
+ansible 65blk -i netdev -m raw -a "sh bgp summ" -u cisco --ask-pass
+ansible asrm61 -i netdev -m raw -a "sh bgp summ" -u cisco --ask-pass
+```  
