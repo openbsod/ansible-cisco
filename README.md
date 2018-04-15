@@ -44,7 +44,7 @@ cp -r //opt/csw/bin/sshpass /usr/bin/
 ansible 65blk -i netdev -m raw -a "sh bgp summ" -u cisco --ask-pass
 ```
 
-###### Ansible ad-hoc BGP-SUMM example
+##### Ansible ad-hoc BGP-SUMM example
 
 ```
 ansible asrm61 -i netdev -m raw -a "sh bgp summ" -u cisco --ask-pass
@@ -52,7 +52,7 @@ ansible asrm61 -i netdev -m raw -a "sh bgp summ" -u cisco --ask-pass
 
 ![alt text](https://github.com/openbsod/ansible-cisco/blob/master/img/bgp-summ-example.png)
 
-###### Python pexpect example
+##### Python pexpect example
 
 ```
 okey-asr "sh bgp ipv4 flowspec neighbors 10.1.0.101 routes | b Network"
