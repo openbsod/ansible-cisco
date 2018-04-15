@@ -38,4 +38,8 @@ USAGE:
 ```
 ansible 65blk -i netdev -m raw -a "sh bgp summ" -u cisco --ask-pass
 ansible asrm61 -i netdev -m raw -a "sh bgp summ" -u cisco --ask-pass
-```  
+```
+
+###### BGP-SUMM example
+
+![alt text](https://github.com/openbsod/ansible-cisco/blob/master/img/bgp-summ-example.png)
