@@ -1,0 +1,58 @@
+#!/usr/bin/python
+
+import pexpect
+import sys
+import argparse
+import ipaddress
+
+user = sys.argv[1]
+host = sys.argv[2]
+pw = 'passw0rd'
+
+print ("*********************************************************")
+print ("*                                                       *")
+print ("*                     |        |                        *")
+print ("*                    |||      |||                       *")
+print ("*                 .:|||||:..:|||||:.                    *")
+print ("*                                                       *")
+print ("*                 Cisco Sytems, Inc.                    *")
+print ("*                                                       *")
+print ("*********************************************************")
+
+print ("#########################################################")
+print ("#               login to remote router:                 #")
+print ("#########################################################")
+print ("#                                                       #")
+print ("#        asrm61 10.72.1.111   65blk 10.72.1.99          #")
+print ("#         asrtll 10.72.1.33  asrcvt19 10.72.1.113       #")
+print ("#                                                       #")
+print ("#########################################################")
+print ("#                                                       #")
+print ("#       usage pn <user> <device>  pn user asrm61        #")
+print ("#                                                       #")
+print ("#########################################################")
+
+def conn(host):
+ conn = pexpect.spawn ('ssh ' + user + '@' + host)
+ conn.delaybeforesend = 0
+ conn.expect('Password:')
+ conn.sendline(pw)
+ conn.interact()
+
+try:
+    if host == 'asrm61':
+        host = '10.72.1.111'
+        conn(host)
+    elif host == '65blk':
+       host = '10.72.1.99'
+       conn(host)
+    else:
+        conn(host)
+except pexpect.EOF:
+    try:
+        if ipaddress.ip_address(26):
+            print('password error')
+    except ValueError:
+        print('unknown error')
+except pexpect.TIMEOUT:
+    print('host unreachable')
