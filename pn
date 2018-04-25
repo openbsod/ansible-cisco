@@ -28,7 +28,7 @@ print ("#         asrtll 10.72.1.33  asrcvt19 10.72.1.113       #")
 print ("#                                                       #")
 print ("#########################################################")
 print ("#                                                       #")
-print ("#       usage pn <user> <device>  pn user asrm61        #")
+print ("#     usage pn <user> <device>  pn operator asrm61      #")
 print ("#                                                       #")
 print ("#########################################################")
 
@@ -53,6 +53,6 @@ except pexpect.EOF:
         if ipaddress.ip_address(26):
             print('password error')
     except ValueError:
-        print('unknown error')
+        print('invalid ip')
 except pexpect.TIMEOUT:
     print('host unreachable')
